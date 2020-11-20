@@ -1,27 +1,21 @@
-export default function ({image, active}){
-  return(
+export default function ({ image }) {
+  return (
     <>
-    <div>
-      <img 
-        className={active && 'isActive'} 
-        src={image} 
-        alt='article image'
-      />
-    </div>
+      <div className="container">
+        {image && <img src={image} alt="article image" />}
+      </div>
+      <style jsx>{`
+        img {
+          width: 200px;
+          object-fit: contain;
+          cursor: pointer;
+          pointer-events: none;
+        }
 
-    <style jsx>{`
-      img{
-        width:200px;
-        opacity:0;
-        object-fit:contain;
-        cursor:pointer; 
-        pointer-events:none; 
-      }
-
-      .isActive {
-      opacity:1;
-      }
-   
+        .container {
+          height: 100px;
+          width: 20%;
+        }
       `}</style>
     </>
   )
